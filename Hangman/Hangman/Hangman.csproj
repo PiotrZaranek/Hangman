@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE711B6E-CC4F-41FF-BCD1-BEF831D27C23}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hangman</RootNamespace>
+    <AssemblyName>Hangman</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IconHangman.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BeforeFight.cs" />
+    <Compile Include="ChangeUser.cs" />
+    <Compile Include="Create.cs" />
+    <Compile Include="Delete.cs" />
+    <Compile Include="DifficultyLevel.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="EndGame.cs" />
+    <Compile Include="Fight.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Sounds.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Animation.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\Engine-Regular.otf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sounds\GoodSound.wav" />
+    <Content Include="Sounds\WrongSound.wav" />
+    <Resource Include="Words\HardWords\Brand.txt" />
+    <Resource Include="Words\HardWords\Car brand.txt" />
+    <Resource Include="Words\HardWords\Dictum.txt" />
+    <Resource Include="Words\HardWords\Game.txt" />
+    <Resource Include="Words\HardWords\History.txt" />
+    <Resource Include="Words\HardWords\Idiom.txt" />
+    <Resource Include="Words\HardWords\Musician.txt" />
+    <Resource Include="Words\HardWords\People.txt" />
+    <Resource Include="Words\MediumWords\Animals.txt" />
+    <Resource Include="Words\MediumWords\Chemistry.txt" />
+    <Resource Include="Words\MediumWords\Ductum.txt" />
+    <Resource Include="Words\MediumWords\Food.txt" />
+    <Resource Include="Words\MediumWords\Job.txt" />
+    <Resource Include="Words\MediumWords\Math.txt" />
+    <Resource Include="Words\MediumWords\Monument.txt" />
+    <Resource Include="Words\MediumWords\Physics.txt" />
+    <Resource Include="Words\MediumWords\Sport.txt" />
+    <Resource Include="Words\MediumWords\Thing.txt" />
+    <Resource Include="Graphic\IconHangman.png" />
+    <Resource Include="IconHangman.ico" />
+    <Resource Include="Saves\Save1.txt" />
+    <Resource Include="Saves\Save2.txt" />
+    <Resource Include="Saves\Save3.txt" />
+    <Resource Include="Saves\Save4.txt" />
+    <Resource Include="Graphic\ChcekboxChceked.png" />
+    <Resource Include="Graphic\Chcekboxframe.png" />
+    <Resource Include="Settings\Settings.txt" />
+    <Content Include="Sounds\ClickSound.wav" />
+    <Content Include="Sounds\MainTheme.wav" />
+    <Content Include="Sounds\WritingPen.wav" />
+    <Resource Include="Words\EasyWords\Animals.txt" />
+    <Resource Include="Words\EasyWords\Food.txt" />
+    <Resource Include="Words\EasyWords\Geography.txt" />
+    <Resource Include="Words\EasyWords\Math.txt" />
+    <Resource Include="Words\EasyWords\Thing.txt" />
+    <Resource Include="Graphic\WrongHit\10WrongHit.png" />
+    <Resource Include="Graphic\WrongHit\1WrongHit.png" />
+    <Resource Include="Graphic\WrongHit\2WrongHit.png" />
+    <Resource Include="Graphic\WrongHit\3WrongHit.png" />
+    <Resource Include="Graphic\WrongHit\4WrongHit.png" />
+    <Resource Include="Graphic\WrongHit\5WrongHit.png" />
+    <Resource Include="Graphic\WrongHit\6WrongHit.png" />
+    <Resource Include="Graphic\WrongHit\7WrongHit.png" />
+    <Resource Include="Graphic\WrongHit\8WrongHit.png" />
+    <Resource Include="Graphic\WrongHit\9WrongHit.png" />
+    <Resource Include="Graphic\LoseImg.png" />
+    <Resource Include="Graphic\WinImg.png" />
+    <Resource Include="Graphic\backgroundIMG.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
